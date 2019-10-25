@@ -9,14 +9,4 @@ pipelines:
 
         script:
           - pip install -r requirements_dev.txt
-          - pip install .
           - pytest --cov-report=html  
-          - pylint dicom_anon | tee coverage_html_report/pylint_dicom_anon.txt
-          - pylint tests | tee coverage_html_report/pylint_tests.txt
-          - make docs | tee coverage_html_report/docstr-coverage_dicom_anon.txt
-          - python setup.py bdist_wheel
-
-        artifacts:
-          - coverage_html_report/**
-          - docs/_build/html/**
-          - dist/**

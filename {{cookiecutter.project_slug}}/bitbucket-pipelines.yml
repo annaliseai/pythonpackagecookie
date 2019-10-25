@@ -1,0 +1,39 @@
+# Bitbucket build pipeline
+
+clone:
+    lfs: true
+
+pipelines:
+  default:
+    - step:
+        name: Package Build
+        image: python:3.6
+        caches:
+          - pip
+
+        script:
+          - pip install -r requirements_dev.txt
+          - pip install .
+          - pytest --cov-report=html
+          - pylint {{ cookiecutter.project_slug }} | tee coverage_html_report/pylint_{{ cookiecutter.project_slug }}.txt
+          - pylint tests | tee coverage_html_report/pylint_tests.txt
+          - make docs | tee coverage_html_report/docstr-coverage_{{ cookiecutter.project_slug }}.txt
+          - python setup.py bdist_wheel
+
+        artifacts:
+          - coverage_html_report/**
+          - dist/**
+
+    - step:
+        name: Documentation Build
+        image: readthedocs/build:latest
+        script:
+          - pip3 install -r requirements_dev.txt
+          - pip3 install .
+          - cd docs
+          - make latexpdf
+          - make html
+
+        artifacts:
+          - docs/_build/latex/{{ cookiecutter.project_slug }}.pdf
+          - docs/_build/html/**

@@ -1,5 +1,5 @@
 ============================
-Python Package Cookitcutter
+Python Package Cookiecutter
 ============================
 
 

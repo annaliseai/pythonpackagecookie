@@ -11,14 +11,16 @@ with open('README.rst') as readme_file:
 
 requirements = [
     {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %}
+    'versioneer>=0.18',
 ]
 
 setup_requirements = [
-    {%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %}
+    'pytest-runner',
 ]
 
 test_requirements = [
-    {%- if cookiecutter.use_pytest == 'y' %}'pytest>=3',{%- endif %}
+    'pytest>=5.1.2',
+    'pytest-cov>=2.7.1',
 ]
 
 setup(

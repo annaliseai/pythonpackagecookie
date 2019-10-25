@@ -14,3 +14,5 @@ watch: bake
 replay: BAKE_OPTIONS=--replay
 replay: watch
 	;
+
+docs:
