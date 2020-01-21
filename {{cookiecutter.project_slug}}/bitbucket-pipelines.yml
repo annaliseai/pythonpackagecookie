@@ -12,8 +12,7 @@ pipelines:
           - pip
 
         script:
-          - pip install -r requirements_dev.txt
-          - pip install .
+          - pip install -r requirements.txt
           - pytest --cov-report=html
           - pylint {{ cookiecutter.project_slug }} | tee coverage_html_report/pylint_{{ cookiecutter.project_slug }}.txt
           - pylint tests | tee coverage_html_report/pylint_tests.txt
@@ -28,8 +27,7 @@ pipelines:
         name: Documentation Build
         image: readthedocs/build:latest
         script:
-          - pip3 install -r requirements_dev.txt
-          - pip3 install .
+          - pip3 install -r requirements.txt
           - cd docs
           - make latexpdf
           - make html
