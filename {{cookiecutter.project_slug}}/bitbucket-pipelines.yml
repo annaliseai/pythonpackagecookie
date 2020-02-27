@@ -1,13 +1,13 @@
 # Bitbucket build pipeline
 
 clone:
-    lfs: true
+  lfs: true
 
 pipelines:
   default:
     - step:
         name: Package Build
-        image: python:3.6
+        image: python:3.7.2
         caches:
           - pip
 
@@ -27,7 +27,7 @@ pipelines:
         name: Documentation Build
         image: readthedocs/build:latest
         script:
-          - pip3 install -r requirements.txt
+          - pip3.7 install -r requirements.txt
           - cd docs
           - make latexpdf
           - make html
