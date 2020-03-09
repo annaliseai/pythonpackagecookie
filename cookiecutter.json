@@ -1,10 +1,14 @@
 {
   "full_name": "Ben Johnston",
-  "email": "ben.johnston@harrison.ai",
+  "email": "ben.johnston@annalise.ai",
   "project_name": "Python Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Python Boilerplate contains all the boilerplate you need to create a Python package.",
   "use_pytest": "y",
   "use_pypi_deployment_with_bitbucket": "y",
-  "command_line_interface": ["Click", "Argparse", "No command-line interface"]
+  "command_line_interface": [
+    "Click",
+    "Argparse",
+    "No command-line interface"
+  ]
 }
