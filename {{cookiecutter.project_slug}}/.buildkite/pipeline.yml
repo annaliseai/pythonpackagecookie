@@ -6,6 +6,8 @@ steps:
           image: "quay.io/pypa/manylinux2010_x86_64"
           propagate-environment: true
           always-pull: true
+    agents:
+      queue: "{{ cookiecutter.buildkite_agent }}"
 
   - wait
 
@@ -19,3 +21,5 @@ steps:
     artifact_paths:
       - "dist/*.whl"
     branches: "master develop"
+    agents:
+      queue: "{{ cookiecutter.buildkite_agent }}"

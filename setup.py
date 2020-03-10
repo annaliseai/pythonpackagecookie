@@ -4,7 +4,7 @@
 """The setup script."""
 
 import versioneer
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -46,7 +46,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://bitbucket.org/harrison-ai/pythonpackagecookie/',
+    url='https://github.com/AnnaliseAI/pythonpackagecookie',
     zip_safe=False,
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
