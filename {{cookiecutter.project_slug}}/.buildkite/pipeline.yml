@@ -12,7 +12,7 @@ steps:
   - wait
 
   - label: ":partyparrot: Build package"
-    commands: "sh ./scripts/build_deid.sh"
+    commands: "sh ./scripts/build_project.sh"
     plugins:
       - docker#v3.5.0:
           image: "quay.io/pypa/manylinux2010_x86_64"
