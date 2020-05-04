@@ -1,0 +1,9 @@
+tags:
+  - name: ci
+  - name: local
+
+envvars:
+  - name: AWS_DEFAULT_REGION
+    tags:
+      - local
+      - ci

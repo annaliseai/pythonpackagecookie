@@ -1,6 +1,14 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
+ifdef CI
+TAGS=--tags ci
+VERSION=${BUILDKITE_COMMIT}
+else
+TAGS=--tags local
+VERSION=latest
+endif
+
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 
@@ -86,3 +94,25 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+docker-pull: .env
+	docker-compose pull
+
+docker-build: docker-pull
+	docker-compose build
+
+docker-test:
+	docker-compose run --rm --entrypoint='' {{ cookiecutter.project_name }}-test /app/scripts/unit_tests.sh
+
+down:
+	docker-compose down --remove-orphans
+
+docker-shell:
+	docker-compose run --rm --entrypoint='' {{ cookiecutter.project_name }}-test /bin/bash
+
+docker-package-build: .env
+	docker-compose run --rm {{ cookiecutter.project_name }}-test /app/scripts/build_project.sh
+
+.env:
+	touch .env
+	docker-compose run --rm envvars envfile --overwrite $(TAGS)

@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  {{ cookiecutter.project_name }}-test:
+    image: "quay.io/pypa/manylinux2010_x86_64"
+    command: ["/bin/bash"]
+    working_dir: "/app"
+    env_file:
+      - .env
+    volumes:
+      - ".:/app"
+  envvars:
+    image: flemay/envvars
+    env_file:
+      - .env
+    working_dir: "/work"
+    volumes:
+      - ".:/work"
