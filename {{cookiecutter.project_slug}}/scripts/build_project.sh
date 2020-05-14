@@ -19,6 +19,6 @@ then
         http://pypi-prod-annalise-ai.s3-website-ap-southeast-2.amazonaws.com/simple/ \
         --trusted-host pypi-prod-annalise-ai.s3-website-ap-southeast-2.amazonaws.com s3pkgup
 
-    /opt/python/cp37-cp37m/bin/s3pkgup --project {{ cookiecutter.project_name }}
+    /opt/python/cp37-cp37m/bin/s3pkgup --project {{ cookiecutter.project_name.lower().replace('_', '-') }}
 
 fi
