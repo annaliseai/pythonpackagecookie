@@ -102,16 +102,16 @@ docker-build: docker-pull
 	docker-compose build
 
 docker-test:
-	docker-compose run --rm --entrypoint='' {{ cookiecutter.project_name }}-test /app/scripts/unit_tests.sh
+	docker-compose run --rm --entrypoint='' {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}-test /app/scripts/unit_tests.sh
 
 down:
 	docker-compose down --remove-orphans
 
 docker-shell:
-	docker-compose run --rm --entrypoint='' {{ cookiecutter.project_name }}-test /bin/bash
+	docker-compose run --rm --entrypoint='' {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}-test /bin/bash
 
 docker-package-build: .env
-	docker-compose run --rm {{ cookiecutter.project_name }}-test /app/scripts/build_project.sh
+	docker-compose run --rm {{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}-test /app/scripts/build_project.sh
 
 .env:
 	touch .env
