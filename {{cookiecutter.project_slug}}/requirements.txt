@@ -9,6 +9,7 @@ twine==1.14.0
 pytest==4.6.5
 pytest-runner==5.1
 pytest-cov==2.7.1
+pytest-xdist==1.32.0
 python-dateutil==2.8.0
 pylint==2.4.1
 Sphinx==2.2.0
