@@ -1,25 +1,13 @@
 steps:
   - label: ":pytest: Run unit tests"
-    commands: "sh ./scripts/unit_tests.sh"
-    plugins:
-      - docker#v3.5.0:
-          image: "quay.io/pypa/manylinux2010_x86_64"
-          propagate-environment: true
-          always-pull: true
+    commands: "docker-compose run test"
     agents:
       queue: "{{ cookiecutter.buildkite_agent }}"
 
   - wait
 
   - label: ":partyparrot: Build package"
-    commands: "sh ./scripts/build_project.sh"
-    plugins:
-      - docker#v3.5.0:
-          image: "quay.io/pypa/manylinux2010_x86_64"
-          propagate-environment: true
-          always-pull: true
-    artifact_paths:
-      - "dist/*.whl"
+    commands: "docker-compose run build"
     branches: "master develop"
     agents:
       queue: "{{ cookiecutter.buildkite_agent }}"
