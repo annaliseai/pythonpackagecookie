@@ -2,7 +2,7 @@ version: "3.7"
 services:
   test:
     image: "quay.io/pypa/manylinux2010_x86_64"
-    command: ["./scripts/unit_test.sh"]
+    command: ["./scripts/unit_tests.sh"]
     working_dir: "/app"
     volumes:
       - ".:/app"
