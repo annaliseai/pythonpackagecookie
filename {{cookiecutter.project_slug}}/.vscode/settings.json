@@ -1,0 +1,10 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.pylintPath": "pylint",
+    "python.formatting.provider": "yapf",
+    "python.linting.pylintEnabled": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "autoDocstring.docstringFormat": "google"
+}
