@@ -60,7 +60,13 @@ confidence=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
-disable=print-statement,
+disable=redefined-outer-name,
+        invalid-name,
+        missing-class-docstring,
+        missing-function-docstring,
+        missing-module-docstring,
+        too-few-public-methods,
+        print-statement,
         parameter-unpacking,
         unpacking-in-except,
         old-raise-syntax,
@@ -238,7 +244,7 @@ redefining-builtins-modules=six.moves,past.builtins,future.builtins,builtins,io
 
 # Format style used to check logging format string. `old` means using %
 # formatting, `new` is for `{}` formatting,and `fstr` is for f-strings.
-logging-format-style=old
+logging-format-style=fstr
 
 # Logging modules to check that the string format arguments are in logging
 # function parameter format.
