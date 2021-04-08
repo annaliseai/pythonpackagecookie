@@ -13,7 +13,7 @@ requirements = [
     {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %}
     'versioneer>=0.18',
     'pylint==2.4.1',
-    'black==20.8b1',
+    {% if cookiecutter.formatter == 'black' %}'black==20.8b1'{% else %}'yapf==0.29.0'{% endif %},
     'isort==5.7.0',
 ]
 

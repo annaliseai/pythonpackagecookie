@@ -1,7 +1,7 @@
 {
     "python.linting.enabled": true,
     "python.linting.pylintPath": "pylint",
-    "python.formatting.provider": "black",
+    "python.formatting.provider": "{{cookiecutter.formatter}}",
     "python.linting.pylintEnabled": true,
     "editor.codeActionsOnSave": {
         "source.organizeImports": true

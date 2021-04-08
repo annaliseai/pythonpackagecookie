@@ -62,9 +62,6 @@ confidence=
 # --disable=W".
 disable=redefined-outer-name,
         invalid-name,
-        missing-class-docstring,
-        missing-function-docstring,
-        missing-module-docstring,
         too-few-public-methods,
         print-statement,
         parameter-unpacking,
