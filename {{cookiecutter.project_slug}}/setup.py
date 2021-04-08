@@ -4,7 +4,7 @@
 """The setup script."""
 
 import versioneer
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -12,6 +12,9 @@ with open('README.rst') as readme_file:
 requirements = [
     {%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %}
     'versioneer>=0.18',
+    'pylint==2.4.1',
+    {% if cookiecutter.formatter == 'black' %}'black==20.8b1'{% else %}'yapf==0.29.0'{% endif %},
+    'isort==5.7.0',
 ]
 
 setup_requirements = [
@@ -19,8 +22,8 @@ setup_requirements = [
 ]
 
 test_requirements = [
-    'pytest>=5.1.2',
-    'pytest-cov>=2.7.1',
+    'pytest>=6.2.0',
+    'pytest-cov>=2.10.0',
 ]
 
 setup(

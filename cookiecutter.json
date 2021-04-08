@@ -13,5 +13,9 @@
     "Click",
     "Argparse",
     "No command-line interface"
+  ],
+  "formatter": [
+    "black",
+    "yapf"
   ]
 }
