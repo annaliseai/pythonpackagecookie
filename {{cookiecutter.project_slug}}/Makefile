@@ -53,7 +53,6 @@ clean-pyc: ## remove Python file artifacts
 	find . -name '__pycache__' -exec rm -fr {} +
 
 clean-test: ## remove test and coverage artifacts
-	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
@@ -64,14 +63,11 @@ lint: ## check style with flake8
 test: ## run tests quickly with the default Python
 	pytest
 
-test-all: ## run tests on every Python version with tox
-	tox
-
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source {{ cookiecutter.project_slug }} -m pytest
 	coverage report -m
 	coverage html
-	$(BROWSER) htmlcov/index.html
+	$(BROWSER) coverage_html_report/index.html
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/{{ cookiecutter.project_slug }}.rst
