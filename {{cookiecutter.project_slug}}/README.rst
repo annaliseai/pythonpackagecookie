@@ -12,7 +12,7 @@ Features
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `harrison.ai cookiecutter`_ project template.
+This package was created with Cookiecutter_ and the `annalise.ai cookiecutter`_ project template.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`harrison.ai cookiecutter`: https://bitbucket.org/harrison-ai/pythonpackagecookie/src/master/ 
+.. _`annalise.ai cookiecutter`: https://github.com./annaliseai/pythonpackagecookie

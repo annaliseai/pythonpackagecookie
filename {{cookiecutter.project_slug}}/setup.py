@@ -53,7 +53,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://bitbucket.org/harrison-ai/{{ cookiecutter.project_slug }}',
+    url='https://github.com/{{ cookiecutter.organisation }}/{{ cookiecutter.project_slug }}',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
     zip_safe=False,
