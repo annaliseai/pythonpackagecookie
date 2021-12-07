@@ -1,17 +1,16 @@
--e .
-s3pkgup
-pip>=21.0.0
+pips3==0.3
+pip==21.0.0
 wheel==0.34.2
 watchdog==2.1.6
 twine==3.6.0
 {% if cookiecutter.command_line_interface|lower == 'click' -%}Click==7.1.2{% endif %}
 pytest==6.2.5
-pytest-cov==2.10.0
+pytest-cov==3.0.0
 pytest-runner==5.1
 pytest-xdist==1.32.0
 python-dateutil==2.8.0
-pylint==2.11.1
-{% if cookiecutter.formatter == 'black' %}black==20.8b1{% else %}yapf==0.29.0{% endif %}
+pylint==2.12.2
+{% if cookiecutter.formatter == 'black' %}black==20.8b1{% else %}yapf==0.31.0{% endif %}
 flake8==4.0.1
 isort==4.3.21
 Sphinx==4.3.0
